@@ -1,8 +1,9 @@
 package sjakkspill;
 
 /**
- *Skal opprette et sjakkbrett med dens komponeneter og fungere enveis.(Kun hvit som
- * skal fungere i første omgang.
+ * Skal opprette et sjakkbrett med dens komponeneter og fungere enveis.(Kun hvit
+ * som skal fungere i første omgang.
+ *
  * @author Ohrius
  */
 public class SjakkSpill {

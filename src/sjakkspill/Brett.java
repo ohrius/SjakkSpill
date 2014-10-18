@@ -98,7 +98,7 @@ class Brett {
             return true;
         }
         String test = b.getRutenavn();
-            System.out.println("Noe gikk feil med Flyttbrikke  " + test);
+        System.out.println("Noe gikk feil med Flyttbrikke  " + test);
         return false;
     }
 }

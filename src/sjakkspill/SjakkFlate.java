@@ -67,6 +67,9 @@ public class SjakkFlate extends JPanel {
             yy = 0;
             xx = xx + 100;
         }
+        
+    xx = 0;
+    yy = 0;
     }
 
 }

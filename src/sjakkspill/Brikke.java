@@ -3,7 +3,8 @@ package sjakkspill;
 import java.awt.Color;
 
 /**
- *Abstrakt klasse til alle brikker på brettet.
+ * Abstrakt klasse til alle brikker på brettet.
+ *
  * @author Ohrius
  */
 public abstract class Brikke extends Brett {
@@ -27,7 +28,6 @@ public abstract class Brikke extends Brett {
     }
 
     //Set/Get metoder
-
     public String getRutenavn() {
         return rutenavn;
     }
@@ -77,7 +77,7 @@ public abstract class Brikke extends Brett {
             int l1 = rutenavn.charAt(0);
             int l2 = rutenavn.charAt(1);
             if (r1 == l1) {
-                if (r2 == (l2+1)) {
+                if (r2 == (l2 + 1)) {
                     return true;
                 }
             }
@@ -85,19 +85,18 @@ public abstract class Brikke extends Brett {
         return false;
     }
 
-    
     //flytter brikken fra rutenavnet og gir nytt rutenavn.
     //Setter også gammel posisjon til null
     public boolean flyttTil(String rutenavn) {
-                String old = this.getRutenavn();
-                int l = old.charAt(0)-97;
-                int l1 = old.charAt(1)-48;
-                this.setRutenavn(rutenavn);
-                int r = rutenavn.charAt(0)-97;
-                int r1 = rutenavn.charAt(1)-48;
-                brikkene[r1][r] = this;
-                brikkene[l1][l] = null;
-                return true;
+        String old = this.getRutenavn();
+        int l = old.charAt(0) - 97;
+        int l1 = old.charAt(1) - 48;
+        this.setRutenavn(rutenavn);
+        int r = rutenavn.charAt(0) - 97;
+        int r1 = rutenavn.charAt(1) - 48;
+        brikkene[r1][r] = this;
+        brikkene[l1][l] = null;
+        return true;
     }
 
 }

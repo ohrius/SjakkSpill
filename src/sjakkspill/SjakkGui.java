@@ -42,12 +42,12 @@ public class SjakkGui extends JFrame implements ActionListener {
         bl.setHgap(0);
         bl.setVgap(0);
         setLayout(bl);
-        
+
         JLabel lblTopp = new JLabel(oppdatert);
         add(lblTopp, BorderLayout.NORTH);
         Sjakk = new SjakkFlate();
         add(Sjakk, BorderLayout.CENTER);
-        
+
         JPanel resPanel = new JPanel();
         resPanel.setLayout(new GridLayout(1, 1, 1, 1));
 
@@ -74,7 +74,7 @@ public class SjakkGui extends JFrame implements ActionListener {
         resPanel.add(lagre);
 
         nyttSpill = new JButton("Nytt spill");
-        //nyttSpill.addActionListener(this);
+        nyttSpill.addActionListener(this);
         resPanel.add(new JPanel());
         resPanel.add(nyttSpill);
 
@@ -85,6 +85,13 @@ public class SjakkGui extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        
+        Object source = e.getSource();
+        if(source == flytt){
+        
+        
+        
+        
         String fraRute = new String(txtFra.getText());
         String tilRute = new String(txtTil.getText());
         if (Brett.erLovligRutenavn(fraRute) && Brett.erLovligRutenavn(tilRute)) {
@@ -97,25 +104,30 @@ public class SjakkGui extends JFrame implements ActionListener {
                     System.out.println("feil farge");
                 }
                 oppdatert = "Brikken må være hvit";
-            }else {
-            System.out.println("ingen brikke i frarute");
-            oppdatert = "Det må være en brikke i fraRute";
+            } else {
+                System.out.println("ingen brikke i frarute");
+                oppdatert = "Det må være en brikke i fraRute";
+            }
+
+            System.out.println("Rutenavnene fungerer");
+
+        } else {
+            System.out.println("Ugyldig rutenavn");
+            oppdatert = "Ugyldig trekk.";
         }
-
-        System.out.println("Rutenavnene fungerer");
-
+        System.out.println(fraRute
+                + "  " + tilRute);
+        validate();
+        repaint();
+    }//source flytt
+        if(source == nyttSpill){
+            Brett.lagBrett();
+        validate();
+        repaint();
+        
+        
+        }
     }
-
     
-        else{
-        System.out.println("Ugyldig rutenavn");
-        oppdatert = "Ugyldig trekk.";
-    }
-
-    System.out.println (fraRute 
-
-    + "  " + tilRute);
-    //Sjakk.validate();
-    //Sjakk.repaint();
-}
+    
 }
